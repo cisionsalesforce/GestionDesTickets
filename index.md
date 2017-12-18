@@ -3,4 +3,4 @@ title: Gestion des tickets GLPI
 layout: default
 ---
 
-# {{ page.title }}
+<h1 id="heading-main">{{ page.title }}</h1>
