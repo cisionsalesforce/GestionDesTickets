@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <link href="normalize.css">
-    <link href="main.css">
-    <link href="favicon.png" rel="icon" type="image/png">
+    <link href="semantic.min.css" rel="stylesheet">
+    <link href="calendar.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="semantic.min.js"></script>
+    <script src="calendar.min.js"></script>
+    <script language='javascript'>
+       $(document).ready(function(){
+          $('#request-form-date').calendar();
+          $('#request-form').form({
+            fields: {
+              name: {
+                identifier: 'request-form-name',
+                rules: [{
+                  type: 'empty',
+                  prompt: 'Prénom: veuillez remplir ce champ obligatoire'
+                }]
+              },
+              lastName: {
+                identifier: 'request-form-last-name',
+                rules: [{
+                  type: 'empty',
+                  prompt: 'Nom: veuillez remplir ce champ obligatoire'
+                }]
+              },
+              phone: {
+                identifier: 'request-form-phone',
+                rules: [{
+                  type: 'empty',
+                  prompt: 'Téléphone: veuillez remplir ce champ obligatoire'
+                }]
+              },
+              email: {
+                identifier: 'request-form-email',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'E-mail: veuillez remplir ce champ obligatoire'
+                  },
+                  {
+                  type: 'email',
+                  prompt: 'E-mail: une adresse e-mail n\'est pas valide'
+                }]
+              },
+              title: {
+                identifier: 'request-form-title',
+                rules: [{
+                  type: 'empty',
+                  prompt: 'Titre: veuillez remplir ce champ obligatoire'
+                }]
+              },
+              date: {
+                identifier: 'request-form-date',
+                rules: [{
+                  type: 'empty',
+                  prompt: 'Date d\'ouverture: veuillez remplir ce champ obligatoire'
+                }]
+              },
+              object: {
+                identifier: 'request-form-object',
+                rules: [{
+                  type: 'empty',
+                  prompt: 'Objet: veuillez remplir ce champ obligatoire'
+                }]
+              },
+              information: {
+                identifier: 'request-form-information',
+                rules: [{
+                  type: 'empty',
+                  prompt: 'Cheminement: veuillez remplir ce champ obligatoire'
+                }]
+              }
+            }
+          });
+          $('#request-form-object')
+            .dropdown()
+          ;
+       });
+     </script>
+
+     <link href="favicon.png" rel="icon" type="image/png">
   </head>
+
   <body>
     <main id="content">
      {{ content }}
    </main>
   </body>
+
 </html>

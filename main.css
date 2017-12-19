@@ -1,0 +1,8 @@
+#heading-main {
+  margin: 1em 0;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 58px;
+}
